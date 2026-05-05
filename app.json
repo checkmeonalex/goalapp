@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "mygoalapp",
-    "slug": "mygoalapp",
+    "slug": "goal-app",
     "scheme": "mygoalapp",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -20,7 +20,10 @@
       },
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false,
-      "package": "com.anonymous.mygoalapp"
+      "package": "com.anonymous.mygoalapp",
+      "permissions": [
+        "android.permission.RECORD_AUDIO"
+      ]
     },
     "web": {
       "output": "static",
@@ -28,6 +31,19 @@
     },
     "plugins": [
       "expo-router",
+      [
+        "expo-dev-client",
+        {
+          "launchMode": "most-recent"
+        }
+      ],
+      [
+        "@react-native-voice/voice",
+        {
+          "microphone": "This app uses the microphone for voice input.",
+          "speechRecognition": "This app converts speech into text for faster goal and routine entry."
+        }
+      ],
       [
         "expo-splash-screen",
         {
@@ -45,6 +61,13 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "d0d05beb-9978-4487-bcc2-44af824180e2"
+      }
+    },
+    "owner": "alx-devs-organization"
   }
 }
